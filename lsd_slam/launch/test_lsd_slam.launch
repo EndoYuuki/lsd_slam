@@ -1,0 +1,16 @@
+<launch>
+
+  <!-- run the pointcloud viewer -->
+  <node pkg="lsd_slam_viewer" type="viewer" name="viewer" output="screen">
+  </node>
+
+  <!-- -->
+  <node pkg="lsd_slam_core" type="live_slam" name="lsd_slam" output="screen">
+    <remap from="image" to="/image_raw" />
+    <remap from="camera_info" to="/camera_info" />
+  </node>
+
+  <!-- -->
+  <!--node pkg="rqt_reconfigure" type="rqt_reconfigure" name="rqt_reconfigure" >
+  </node-->
+</launch>
